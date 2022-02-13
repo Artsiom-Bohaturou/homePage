@@ -273,15 +273,15 @@ body {
     height: 360px;
   }
   .main .section__img_1 {
-    background: url(/images/mobile-image-hero-1.jpg) no-repeat;
+    background: url(../images/mobile-image-hero-1.jpg) no-repeat;
     background-size: 100% 100%;
   }
   .main .section__img_2 {
-    background: url(/images/mobile-image-hero-2.jpg) no-repeat;
+    background: url(../images/mobile-image-hero-2.jpg) no-repeat;
     background-size: 100% 100%;
   }
   .main .section__img_3 {
-    background: url(/images/mobile-image-hero-3.jpg) no-repeat;
+    background: url(../images/mobile-image-hero-3.jpg) no-repeat;
     background-size: 100% 100%;
   }
   .main .section__content {

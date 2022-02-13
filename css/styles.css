@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.block-scroll {
+  overflow-y: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2fr 1fr;
+      grid-template-rows: 2fr 1fr;
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    height: auto;
+    display: block;
+  }
+}
+
+.header {
+  position: absolute;
+  top: 65px;
+  left: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  z-index: 2;
+}
+
+.header .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 240px;
+  margin: 0 0 0 60px;
+}
+
+.header .navigation__item {
+  font-size: 14px;
+  text-transform: lowercase;
+  font-weight: 500;
+  position: relative;
+}
+
+.header .navigation__item::after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: calc(50% - 16px / 2);
+  width: 16px;
+  height: 2px;
+  background-color: white;
+}
+
+.header .navigation__item:hover::after {
+  display: block;
+}
+
+.header .burger {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .header {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 110px;
+  }
+  .header .company-name {
+    margin: 0 auto;
+  }
+  .header .burger {
+    display: block;
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    top: 45px;
+    left: 25px;
+  }
+  .header .burger__menu, .header .burger__menu::after, .header .burger__menu::before {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+  }
+  .header .burger__menu::after {
+    top: 7px;
+    content: "";
+  }
+  .header .burger__menu::before {
+    top: -7px;
+    content: "";
+  }
+  .header .burger__menu {
+    top: 7px;
+  }
+  .header .navigation {
+    position: absolute;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 100%;
+    height: 110px;
+    left: 0;
+    top: -110px;
+    margin: 0;
+    background-color: white;
+    z-index: 1;
+    color: black;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .header .navigation .navigation__item {
+    padding-right: 25px;
+  }
+  .header.active {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .header.active .company-name {
+    display: none;
+  }
+  .header.active .burger__menu, .header.active .burger__menu::after, .header.active .burger__menu::before {
+    background-color: #a1a1a1;
+  }
+  .header.active .burger__menu {
+    height: 0;
+  }
+  .header.active .burger__menu::after, .header.active .burger__menu::before {
+    top: 0;
+  }
+  .header.active .burger__menu::after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .header.active .burger__menu::before {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .header.active .navigation {
+    top: 0;
+  }
+}
+
+.main {
+  position: relative;
+}
+
+.main__section.section {
+  display: none !important;
+}
+
+.main__section.main__section_active.section {
+  display: -ms-grid !important;
+  display: grid !important;
+}
+
+.main .section {
+  width: 100%;
+  height: 100%;
+  -ms-grid-columns: 1.4fr 1fr;
+      grid-template-columns: 1.4fr 1fr;
+}
+
+.main .section__img {
+  width: 100%;
+  height: 100%;
+}
+
+.main .section__img_1 {
+  background: url(/images/desktop-image-hero-1.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.main .section__img_2 {
+  background: url(/images/desktop-image-hero-2.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.main .section__img_3 {
+  background: url(/images/desktop-image-hero-3.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.main .section__content {
+  width: 400px;
+  margin: auto;
+}
+
+.main .section__title {
+  font-weight: 700;
+  font-size: 37px;
+}
+
+@media (max-width: 1200px) {
+  .main .section__title {
+    font-size: 25px;
+  }
+}
+
+.main .section__description {
+  color: #a1a1a1;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.main .section__button {
+  border: none;
+  background-color: white;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 30px;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.main .section__button:hover {
+  color: #a1a1a1;
+}
+
+.main .section__button:hover .img-svg path {
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  fill: #a1a1a1;
+}
+
+@media (max-width: 800px) {
+  .main .section {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .main .section__img {
+    height: 360px;
+  }
+  .main .section__img_1 {
+    background: url(/images/mobile-image-hero-1.jpg) no-repeat;
+    background-size: 100% 100%;
+  }
+  .main .section__img_2 {
+    background: url(/images/mobile-image-hero-2.jpg) no-repeat;
+    background-size: 100% 100%;
+  }
+  .main .section__img_3 {
+    background: url(/images/mobile-image-hero-3.jpg) no-repeat;
+    background-size: 100% 100%;
+  }
+  .main .section__content {
+    width: auto;
+    min-height: 410px;
+    padding: 75px 25px;
+  }
+}
+
+.main__buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: absolute;
+  bottom: 0;
+  left: calc(100% / (1 / 1.4 + 1));
+}
+
+.main__buttons-container .main__button {
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  border: none;
+  background-color: black;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.main__buttons-container .main__button:hover {
+  background-color: #454545;
+}
+
+@media (max-width: 800px) {
+  .main__buttons-container {
+    left: auto;
+    bottom: auto;
+    top: calc(360px - 80px);
+    right: 0;
+  }
+}
+
+.footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.38fr 1.05fr;
+      grid-template-columns: 1fr 1.38fr 1.05fr;
+}
+
+.footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 50px;
+  max-height: 267px;
+}
+
+@media (max-width: 1200px) {
+  .footer__content {
+    padding: 25px;
+  }
+}
+
+.footer__description {
+  color: #a1a1a1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer__img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 800px) {
+  .footer {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .footer__content {
+    margin: 40px 0;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

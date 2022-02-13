@@ -207,7 +207,7 @@ body {
 
             @each $i in 1, 2, 3 {
                 &_#{$i} {
-                    background: url(/images/desktop-image-hero-#{$i}.jpg) no-repeat;
+                    background: url(./images/desktop-image-hero-#{$i}.jpg) no-repeat;
                     background-size: 100% 100%;
                 }
             }
